@@ -1,7 +1,4 @@
 module.exports = {
-  markdown: {
-    lineNumbers: true
-  },
   title: '前端开发文档',
   description: '基于React + redux + antd-design + webpack + babel + less + es6/7/8 + axios的技术栈',
   logo: '/favicon.png',
@@ -15,18 +12,104 @@ module.exports = {
       rel: 'stylesheet',
       type: 'text/css',
       href: '/base.css'
-    }]
+    }],
+    [
+      'link', {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css'
+      }
+    ]
   ],
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
+    lastUpdated: '上次更新于',
     nav: [
       {
-        text: '开发文档',
+        text: '概述',
         link: '/guide'
       },
       {
-        text: '组件',
-        link: '/component/',
-        important: true
+        text: '开发指南',
+        link: '/develop/'
+      },
+      {
+        text: '编码规范',
+        link: '/code/'
+      },
+      {
+        text: '设计规范',
+        link: '/design/'
+      },
+      {
+        text: '组件示例',
+        important: true,
+        items: [
+          {
+            text: 'react-web组件',
+            link: '/react-web-component/'
+          },
+          {
+            text: 'react-mobile组件',
+            link: '/react-mobile-component/'
+          },
+          {
+            text: 'vue-mobile组件',
+            link: '/vue-mobile-component/'
+          },
+          {
+            text: 'vue-web组件',
+            link: '/vue-web-component/'
+          },
+        ]
+      },
+      {
+        text: '前端项目',
+        link: '/project/'
+      },
+      {
+        text: '技术分享',
+        link: '/sharing/'
+      },
+      {
+        text: '知识库',
+        important: true,
+        items: [{
+          text: 'Html',
+          link: '/knowledge-html/'
+        }, {
+          text: 'Css',
+          link: '/knowledge-css/'
+        }, {
+          text: 'Javascript',
+          link: '/knowledge-javascript/'
+        }, {
+          text: 'Vue',
+          link: '/knowledge-vue/'
+        }, {
+          text: 'React',
+          link: '/knowledge-react/'
+        }, {
+          text: 'Http',
+          link: '/knowledge-http/'
+        }, {
+          text: 'Webpack',
+          link: '/knowledge-webpack/'
+        }, {
+          text: 'Node',
+          link: '/knowledge-node/'
+        }, {
+          text: 'Nginx',
+          link: '/knowledge-nginx/'
+        }, {
+          text: 'Git',
+          link: '/knowledge-git/'
+        }, {
+          text: '其他',
+          link: '/knowledge-other/'
+        }]
       }
       // {
       //   text: 'GitHub',
@@ -36,13 +119,26 @@ module.exports = {
     ],
     sidebar: {
       '/guide/': [
-        'introduction',
-        {
-          title: 'page-collapsed',
-          children: ['page-collapsed']
-        }
+        'introduction'
       ],
-      '/component/': [
+      '/develop/': [
+        '',
+        'develop-vue-mobile',
+        'develop-vue-web',
+        'develop-react-mobile',
+        'develop-react-web'
+      ],
+      '/code/': [
+        '',
+        'code-vue',
+        'code-react'
+      ],
+      '/design/': [
+        '',
+        'design-mobile',
+        'design-web'
+      ],
+      '/react-web-component/': [
         '',
         {
           title: '表单组件',
@@ -52,6 +148,73 @@ module.exports = {
             'upload-file'
           ]
         }
+      ],
+      '/react-mobile-component/': [
+        ''
+      ],
+      '/vue-web-component/': [
+        '',
+        {
+          title: '表单组件',
+          collapsable: false,
+          children: [
+            'table-list',
+            'upload-file'
+          ]
+        }
+      ],
+      '/vue-web-component/': [
+        '',
+        {
+          title: '表单组件',
+          collapsable: false,
+          children: [
+            'table-list',
+            'upload-file'
+          ]
+        }
+      ],
+      '/project/': [
+        '',
+        'project-mobile',
+        'project-web',
+        'project-publish'
+      ],
+      '/sharing/': [
+        ''
+      ],
+      '/knowledge-html/': [
+        ''
+      ],
+      '/knowledge-css/': [
+        ''
+      ],
+      '/knowledge-javascript/': [
+        ''
+      ],
+      '/knowledge-vue/': [
+        ''
+      ],
+      '/knowledge-react/': [
+        ''
+      ],
+      '/knowledge-http/': [
+        ''
+      ],
+      '/knowledge-webpack/': [
+        ''
+      ],
+      '/knowledge-node/': [
+        ''
+      ],
+      '/knowledge-nginx/': [
+        ''
+      ],
+      '/knowledge-git/': [
+        ''
+      ],
+      '/knowledge-other/': [
+        ''
       ]
     },
     themeColors: {
