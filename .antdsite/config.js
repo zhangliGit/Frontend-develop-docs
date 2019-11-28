@@ -1,6 +1,6 @@
 module.exports = {
   title: '前端开发文档',
-  description: '基于React + redux + antd-design + webpack + babel + less + es6/7/8 + axios的技术栈',
+  description: 'Vue + React',
   logo: '/favicon.png',
   footer: 'Copyright © 2018—2019 武汉全品教育科技有限公司版权所有',
   head: [
@@ -77,8 +77,11 @@ module.exports = {
         text: '知识库',
         important: true,
         items: [{
-          text: 'Html',
-          link: '/knowledge-html/'
+          text: '前端链接',
+          link: '/knowledge-link/'
+        }, {
+        text: 'Html',
+        link: '/knowledge-html/'
         }, {
           text: 'Css',
           link: '/knowledge-css/'
@@ -181,6 +184,9 @@ module.exports = {
         'project-publish'
       ],
       '/sharing/': [
+        ''
+      ],
+      '/knowledge-link/': [
         ''
       ],
       '/knowledge-html/': [
