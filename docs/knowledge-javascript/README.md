@@ -1,1 +1,1 @@
-# Javascript知识点
+# Javascript

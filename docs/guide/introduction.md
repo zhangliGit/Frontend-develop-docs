@@ -6,13 +6,19 @@ home: true
 
 **<i class="fa fa-hand-o-right"></i> 此文档供前端开发人员使用，共包括如下部分：**
 
-+ [开发文档](/document/)
++ [开发指南](/develop/)
+
++ [编码规范](/code/)
 
 + [设计规范](/design/)
 
 + [组件示例](/react-web-component/)
 
 + [前端项目](/project/)
+
++ [技术分享](/sharing/)
+
++ [知识库](/knowledge-link/)
 
 ## 前端框架
 

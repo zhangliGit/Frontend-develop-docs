@@ -1,21 +1,23 @@
-/** 首页分块 **/
-
+/** 主题颜色 **/
+.main-color {
+  color: #1890ff
+}
 /** 提示信息 **/
 .tip-info {
   border-left: 4px #1890ff solid;
-  padding: 10px 15px;
+  padding: 4px 15px;
   color:#444;
   background-color: #eee;
 }
 .tip-warn {
   border-left: 4px #e7c000 solid;
-  padding: 10px 15px;
+  padding: 4px 15px;
   color:#6b5900;
   background-color: rgba(255, 229, 100, .3);
 }
 .tip-danger {
   border-left: 4px #c00 solid;
-  padding: 10px 15px;
+  padding: 4px 15px;
   color: #4d0000;
   background-color: #ffe6e6;
 }

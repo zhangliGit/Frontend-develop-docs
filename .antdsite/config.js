@@ -48,21 +48,20 @@ module.exports = {
         important: true,
         items: [
           {
-            text: 'react-web组件',
-            link: '/react-web-component/'
+            text: 'vue-mobile组件',
+            link: '/vue-mobile-component/'
+          }, {
+            text: 'vue-web组件',
+            link: '/vue-web-component/'
           },
           {
             text: 'react-mobile组件',
             link: '/react-mobile-component/'
           },
           {
-            text: 'vue-mobile组件',
-            link: '/vue-mobile-component/'
-          },
-          {
-            text: 'vue-web组件',
-            link: '/vue-web-component/'
-          },
+            text: 'react-web组件',
+            link: '/react-web-component/'
+          }
         ]
       },
       {
@@ -193,10 +192,21 @@ module.exports = {
         ''
       ],
       '/knowledge-css/': [
-        ''
+        '',
+        'layout',
+        'shape',
+        'animation'
       ],
       '/knowledge-javascript/': [
-        ''
+        '',
+        'javascript-base',
+        'javascript-middle',
+        'javascript-high',
+        'performance',
+        'es6',
+        'es7',
+        'es8',
+        'canvas'
       ],
       '/knowledge-vue/': [
         ''
