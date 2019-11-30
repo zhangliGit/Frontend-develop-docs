@@ -11,5 +11,8 @@
   "devDependencies": {
     "antdsite": "0.12.10",
     "gatsby": "^2.13.45"
+  },
+  "dependencies": {
+    "mdx": "^0.3.1"
   }
 }
