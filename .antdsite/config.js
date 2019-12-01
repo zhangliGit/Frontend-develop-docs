@@ -140,18 +140,7 @@ module.exports = {
         'design-mobile',
         'design-web'
       ],
-      '/react-web-component/': [
-        '',
-        {
-          title: '表单组件',
-          collapsable: false,
-          children: [
-            'table-list',
-            'upload-file'
-          ]
-        }
-      ],
-      '/react-mobile-component/': [
+      '/vue-mobile-component/': [
         ''
       ],
       '/vue-web-component/': [
@@ -165,16 +154,11 @@ module.exports = {
           ]
         }
       ],
-      '/vue-web-component/': [
-        '',
-        {
-          title: '表单组件',
-          collapsable: false,
-          children: [
-            'table-list',
-            'upload-file'
-          ]
-        }
+      '/react-mobile-component/': [
+        ''
+      ],
+      '/react-web-component/': [
+        ''
       ],
       '/project/': [
         '',
