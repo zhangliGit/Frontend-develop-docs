@@ -2,6 +2,15 @@
 .main-color {
   color: #1890ff
 }
+.tip-color {
+  color: #1890ff
+}
+.warn-color {
+  color:#e7c000
+}
+.error-color {
+  color: #c00
+}
 /** 提示信息 **/
 .tip-info {
   border-left: 4px #1890ff solid;

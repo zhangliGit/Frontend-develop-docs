@@ -133,7 +133,8 @@ module.exports = {
       '/code/': [
         '',
         'code-vue',
-        'code-react'
+        'code-react',
+        'code-tip'
       ],
       '/design/': [
         '',
