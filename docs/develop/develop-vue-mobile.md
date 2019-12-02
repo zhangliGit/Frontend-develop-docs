@@ -169,6 +169,8 @@ export default hostEnv
          |-- news.js 新闻模块接口
 ```
 
+****
+
 **接口模块示例**
 
 ```js
