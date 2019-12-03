@@ -189,10 +189,16 @@ git fetch origin -u [name]:[name]
 git branch -D [name]
 ````
 
-## 删除远程分支
+## 删除远程分支或tag
 
 ```
 git push origin --delete [name]
+```
+
+## 删除本地tag
+
+```
+git tag -d [tag]
 ```
 
 ## 查看分支

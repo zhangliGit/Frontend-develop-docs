@@ -2,18 +2,27 @@
 
 ## 常规操作
 
-**<p class="tip-color"><i class="fa fa-lightbulb-o"></i> git基础操作主要分为如下几个步骤</p>**
+**<p class="tip-color">git基础操作主要分为如下几个步骤</p>**
 
 **第一步：提交工作区代码到暂存区**
 
 ```
+# 暂存所有文件
 git add .
+
+# 暂存指定目录或文件
+git add file
 ```
 
 **第二步： 提交暂存区代码到本地仓库**
 
+**<p class="tip-color"><i class="fa fa-lightbulb-o"></i> 参考git提交格式</p>**
+
 ```
 git commit -m '提交信息'
+git cz
+or
+git cz file
 ```
 
 **第三步：拉取远程代码**
@@ -29,6 +38,11 @@ git pull origin dev
 ```
 git push origin dev
 ```
+
+<p class="tip-info">
+  <h3>提示</h3>
+  每次提交代码时以功能或模块作为一次提交记录，最好不要所有修改一起提交
+</p>
 
 ## git提交规范
 
@@ -54,13 +68,13 @@ git push origin dev
 npm install -g commitizen
 npm install -g cz-conventional-changelog
 
-// 在项目目录中执行
+// 设置支持commit message格式, 在项目目录中执行
 commitizen init cz-conventional-changelog --save-dev --save-exact --force
 ```
 
 <p class="tip-color">使用</p>
 
-用 git cz -m 代替 git commit -m 就可以轻松的写出 Angular 规范的 commit message 了
+用 git cz 代替 git commit -m 就可以轻松的写出 Angular 规范的 commit message 了
 
 ## git提交格式
 
@@ -83,31 +97,33 @@ Header部分只有一行，包括三个字段：type（必需）、scope（可�
 
 **<p class="warn-color">1. type</p>**
 
-type用于说明 commit 的类别，只允许使用下面7个标识
+type用于说明 commit 的类别，只允许使用下面10个标识
 
 + feat：新功能（feature）
 
 + fix：修补bug
 
-+ docs：文档（documentation）
++ docs：文档修改（documentation）
 
 + style： 格式（不影响代码运行的变动）
 
-+ perf: 提升页面性能
-
 + refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+
++ perf：提高性能
 
 + test：增加测试
 
-+ deps: 升级依赖
++ build：依赖的外部资源变化
 
 + chore：构建过程或辅助工具的变动（包括但不限于文档、代码生成等, 比如修改了README，webpack配置文件等等）
+
++ revert：恢复先前的提交
 
 如果type为feat和fix，则该 commit 将肯定出现在 Change log 之中。其他情况（docs、chore、style、refactor、test）由你决定，要不要放入 Change log，建议是不要
 
 **<p class="warn-color">2. scope</p>**
 
-scope用于说明 commit 影响的范围，比如路由，组件，功能，接口配置等，视情况而定
+scope用于说明 commit 影响的范围，比如路由，组件，功能，接口配置等，视情况而定，如果没有合适的scope，可以省略
 
 **<p class="warn-color">3. subject</p>**
 
@@ -120,3 +136,40 @@ Body 部分是对本次 commit 的详细描述，可以分成多行。下面是�
 **<p class="tip-color"><i class="fa fa-lightbulb-o"></i> footer</p>**
 
 可以不使用
+
+## git格式验证
+
+**在每次commit前检验提交的信息是否符合规范**
+
+```
+# 安装validate-commit-msg
+npm install --save-dev validate-commit-msg
+
+# 安装ghooks
+cnpm install ghooks --save-dev
+```
+
+**在 package.json 配置 ghooks。在config中添加如下信息**
+
+```js
+"config": {
+  "ghooks": {
+    "commit-msg": "validate-commit-msg"
+  },
+  "validate-commit-msg": {
+    "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
+    "scope": {
+      "required": false,
+      "allowed": ["*"],
+      "validate": false,
+      "multiple": false
+    },
+    "warnOnFail": false,
+    "maxSubjectLength": 100,
+    "subjectPattern": ".+",
+    "subjectPatternErrorMsg": "subject does not match subject pattern!",
+    "helpMessage": "",
+    "autoFix": false
+  }
+}
+```

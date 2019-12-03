@@ -8,18 +8,28 @@
 
 **<p class="tip-color"><i class="fa fa-lightbulb-o"></i>  推荐示例</p>**
 
-```
-文件目录: person-center
-脚本文件：config-api.js
-样式文件：common-style.css
+```js
+# 文件目录
+person-center
+
+# 脚本文件
+config-api.js
+
+# 样式文件
+common-style.css
 ```
 
 **<p class="error-color">不推荐</p>**
 
 ```
-文件目录: personCenter
-脚本文件：configApi.js
-样式文件：commonStyle.css
+# 文件目录
+personCenter
+
+# 脚本文件
+configApi.js
+
+# 样式文件
+commonStyle.css
 ```
 
 ## JS变量
