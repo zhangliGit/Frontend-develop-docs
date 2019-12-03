@@ -36,7 +36,7 @@ module.exports = {
         link: '/develop/'
       },
       {
-        text: '编码规范',
+        text: '开发规范',
         link: '/code/'
       },
       {
@@ -134,7 +134,8 @@ module.exports = {
         '',
         'code-vue',
         'code-react',
-        'code-tip'
+        'code-tip',
+        'code-git'
       ],
       '/design/': [
         '',
@@ -212,7 +213,8 @@ module.exports = {
         ''
       ],
       '/knowledge-git/': [
-        ''
+        '',
+        'git-commit'
       ],
       '/knowledge-other/': [
         ''
