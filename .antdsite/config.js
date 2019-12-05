@@ -22,7 +22,7 @@ module.exports = {
     ]
   ],
   markdown: {
-    lineNumbers: true
+    lineNumbers: false
   },
   themeConfig: {
     lastUpdated: '上次更新于',
@@ -152,7 +152,11 @@ module.exports = {
           collapsable: false,
           children: [
             'table-list',
-            'upload-file'
+            'page-num',
+            'submit-form',
+            'search-form',
+            'show-dialog',
+            'upload-multi'
           ]
         }
       ],

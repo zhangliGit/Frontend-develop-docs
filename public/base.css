@@ -35,3 +35,8 @@
 li.__internal p {
   color: #1890ff
 }
+
+/** 表格 **/
+table td:last-child {
+  width: 350px !important;
+}
