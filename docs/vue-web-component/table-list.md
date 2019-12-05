@@ -1,6 +1,6 @@
-# 表格组件
+# 表格组件 TableList
 
-## 组件功能
+## 功能
 
 + 通用展示
 
@@ -14,89 +14,108 @@
 
 + 自定义操作按钮
 
-## 引用组件
+## 示例
 
-```js
-import React, { Component } from 'react'
-import TableList from '@c/TableList
-export default class Demo extends Component {
-  state = {
-    chooseValue: [],
-    pageList: {
-      page: 1,
-      size: 20
-    },
-    dataList: [
-      {
-        id: 1,
-        name: '张三',
-        sex: 1,
-      },
-      {
-        id: 2,
-        name: '李四',
-        sex: 2,
-      },
-    ],
-  }
-  columns = [
+```html
+<template>
+  <table-list
+    is-check
+    :page-list="pageList"
+    v-model="chooseList"
+    :columns="columns"
+    :table-list="userList">
+    <template v-slot:actions="action">
+      <a-tag color="#ccc" @click.stop="goDetial('/manage/detail')">详情</a-tag>
+      <a-tag @click.stop="goDetial('/manage/addForm')">编辑</a-tag>
+    </template>
+  </table-list>
+</template>
+<script>
+  import TableList from '@c/TableList'
+  const columns = [
     {
       title: '序号',
-      dataIndex: 'index',
-      width: '10%',
-      render: (text: any, record: object, index: number) => {
-        return (this.state.pageList.page - 1) * this.state.pageList.size + (index + 1);
-      },
+      width: '5%',
+      scopedSlots: {
+        customRender: 'index'
+      }
     },
     {
       title: '姓名',
-      dataIndex: 'name',
-      width: '20%',
+      dataIndex: 'userName',
+      width: '15%'
     },
     {
       title: '年龄',
-      dataIndex: 'sex',
-      render: (text: string) => {
-        return parseInt(text) === 1 ? '男' : '女';
-      },
-      width: '20%',
+      dataIndex: 'age',
+      width: '10%'
+    },
+    {
+      title: '部门',
+      dataIndex: 'depart',
+      width: '20%'
+    },
+    {
+      title: '手机',
+      dataIndex: 'phone',
+      width: '10%'
+    },
+    {
+      title: '底照',
+      dataIndex: 'photo',
+      width: '10%',
+      scopedSlots: {
+        customRender: 'photoPic'
+      }
+    },
+    {
+      title: '抓拍照',
+      dataIndex: 'photo',
+      width: '10%',
+      scopedSlots: {
+        customRender: 'snapPic'
+      }
     },
     {
       title: '操作',
-      key: 'action',
-      width: '40%',
-      render: (record: object) => (
-        <div>
-          <Tag onClick={() => this.delList(record)} color="orange">
-            删除
-          </Tag>
-          <Tag onClick={() => this.modify(record)} color="#ccc">
-            编辑
-          </Tag>
-        </div>
-      ),
-    },
+      width: '20%',
+      scopedSlots: {
+        customRender: 'action'
+      }
+    }
   ]
-  render () {
-    return (
-     <TableList
-        type="radio"
-        chooseValue = { this.state.chooseValue }
-        columns={this.columns}
-        dataList={this.state.dataList}
-      ></TableList>
-    )
+  export default {
+    name: 'Demo',
+    components: {
+      TableList
+    },
+    data () {
+      return {
+        pageList: {
+          page: 1,
+          size: 20
+        },
+        columns,
+        chooseList: [], // 当有选择项时，被选中的项，返回每项的唯一id
+        userList: []
+      }
+    }
   }
-}
+</script>
 ```
 
-## 组件属性
+## 属性
 
 名字|类型|是否必需|默认值|说明
 :-|:-|:-:|:-:|:-
-type|String|否|checkout: 多选框 radio: 单选框|是否有选择框
-chooseValue|Array|否|[]|默认选中的表格项
-columns|Array|是|[]|表格项列表
-dataList|Array|是|[]|表格数据, 每条数据需要以id作为唯一标识符，避免key属性重复，
+is-check|Boolean|否|false|是否有多选框
+is-radio|Boolean|否|false|是否有单选框
+v-model|Array|否|[]|当有多选择或单选框时，被选中的表格项id
+columns|Array|是|[]|表格项列表属性
+table-list|Array|是|[]|表格数据, 每条数据需要以id作为唯一标识符，避免key属性重复，
 
-## 组件事件
+## 事件
+
+名字|参数|说明
+:-|:-|:-
+clickRow|String|点击表格触发，返回当前项id，当有多选和单选时可用
