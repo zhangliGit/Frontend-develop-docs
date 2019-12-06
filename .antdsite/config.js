@@ -158,7 +158,16 @@ module.exports = {
             'show-dialog',
             'upload-multi'
           ]
-        }
+        },
+        {
+          title: '项目组件',
+          collapsable: false,
+          children: [
+            'grade-tree',
+            'org-tree'
+          ]
+        },
+        'no-data'
       ],
       '/react-mobile-component/': [
         ''

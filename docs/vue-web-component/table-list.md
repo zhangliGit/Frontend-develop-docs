@@ -12,6 +12,8 @@
 
 + 全选
 
++ 图像显示放大
+
 + 自定义操作按钮
 
 ## 示例
@@ -20,6 +22,7 @@
 <template>
   <table-list
     is-check
+    is-zoom
     :page-list="pageList"
     v-model="chooseList"
     :columns="columns"
@@ -113,6 +116,9 @@ is-radio|Boolean|否|false|是否有单选框
 v-model|Array|否|[]|当有多选择或单选框时，被选中的表格项id
 columns|Array|是|[]|表格项列表属性
 table-list|Array|是|[]|表格数据, 每条数据需要以id作为唯一标识符，避免key属性重复，
+is-zoom|Boolean|否|false|是否显示图片(人像)放大图
+width|Number|否|60|图片宽度
+height|Number|否|60|图片高度
 
 ## 事件
 
