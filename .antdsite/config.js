@@ -198,13 +198,27 @@ module.exports = {
       ],
       '/knowledge-javascript/': [
         '',
-        'javascript-base',
+        {
+          title: 'javascript基础',
+          collapsable: false,
+          children: [
+            'javascript-base',
+            'javascript-type',
+            'javascript-object',
+            'javascript-array',
+            'javascript-function',
+          ]
+        },
         'javascript-middle',
         'javascript-high',
-        'performance',
+        'javascript-syntax',
         'es6',
         'es7',
         'es8',
+        'javascript-request.md',
+        'javascript-debug.md',
+        'performance',
+        'javascript-brower.md',
         'canvas'
       ],
       '/knowledge-vue/': [
