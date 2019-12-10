@@ -1,22 +1,26 @@
 # 数据类型
 
-**javascript中数据类型分为两种：原始类型和对象类型，也就是常说的基本数据和引用类型**
+**javascript中数据类型分为两种：基本数据类型和复杂数据类型(引用数据类型)**
 
 ## 基本数据
 
 **基本数据类型一共有6中，es6之前有5中，es6中新增了symbol**
 
-+ string
++ String
 
-+ number
++ Number
 
-+ boolean
++ Boolean
 
-+ null
++ Null
 
-+ undefined
++ Undefined
 
-+ symbol
++ Symbol
+
+> String, Number, Boolean属于原始类型，代表了各自类型的所有成员
+
+> Undefined，Null属于原始值, 代表了各自特殊类型的唯一成员
 
 **基本数据类型可以使用typeof操作符判断**
 
@@ -100,13 +104,15 @@ console.log(typeof test) // function
 
 + object
 
+> ECMAScript中特殊的对象类型：Array, Function, Math, Date, Error, JSON, RegExp, 每种类型都各自代表一种独立的类
+
 **概念**
 
-+ 数据时可变的，存储在堆内存中
++ 数据是可变的，存储在堆内存中
 
 + 对象赋值时按引用赋值，两个对象指向同一个引用
 
-+ object类型是其他所有实例对象的基类
++ object类型是其他所有实例对象的基类，除了原型链顶端
 
 **原型属性**
 
@@ -157,3 +163,11 @@ Object.prototype.toString.call(obj) // '[object Object ]'
 const arr = []
 Object.prototype.toString.call(arr) // '[object Array]'
 ```
+
+<p class="tip-warn">
+  <h3>javascript中常见类型划分</h3>
+  <p>1. 原始类型，对象类型</p>
+  <p>2. 值类型，引用类型</p>
+  <p>3. 可变类型，不可变类型</p>
+  <p>4. 可拥有方法类型，不可拥有方法类型</p>
+</p>
