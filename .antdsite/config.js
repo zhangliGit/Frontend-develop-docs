@@ -149,7 +149,7 @@ module.exports = {
         '',
         {
           title: '表单组件',
-          collapsable: true,
+          collapsable: false,
           children: [
             'table-list',
             'page-num',

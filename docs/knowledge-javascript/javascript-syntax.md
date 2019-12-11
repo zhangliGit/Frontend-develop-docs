@@ -323,7 +323,97 @@ console.log(test()) // hello
 
 + 微任务：promise.then()方法属于微任务
 
-## 事件模型 
+## 事件模型
+
+**javascript中的事件模型一共分为3中：DOM0级事件模型，DOM2级事件模型，IE事件模型**
+
+**<p class="tip-color">DOM0级事件模型(原始事件模型)</p>**
+
+此模型没有事件流，能兼容所有浏览器，此方式每个dom元素只能绑定一个同类事件，重复绑定会被后面的覆盖
+
+```js
+# 方式一：将事件通过属性直接绑定在元素上
+<button onclick="clickBtn()"></button>
+
+# 方式二：获取到dom元素后，通过onclick等事件，将触发的方法指定为元素的事件
+const btn = document.getElementById('btn')
+btn.onclick = function(){} //绑定事件
+btn.onclick = null // 销魂事件
+```
+
+**<p class="tip-color">DOM2级事件模型（W3C标准事件模型）</p>**
+
+此模型有事件流，共分为三个阶段：事件捕获-目标阶段-事件冒泡
+
+![event](img/event.png)
+
+```js
+# 事件绑定
+el.addEventListener('click', handler)
+
+# 移除事件
+el.addEventListener('click', handler)
+```
+
+**<p class="tip-color">IE事件模型</p>**
+
+此模型只有冒泡，仅在IE浏览器中有效，不兼容其他浏览器
+
+```js
+# 绑定事件
+el.attachEvent(eventType, handler)
+
+# 移除事件
+el.detachEvent(eventType, handler)
+```
+
+## 事件代理（事件委托）
+
+**定义**
+
+> 指利用事件冒泡，只通过指定一个事件处理程序，来管理某一类型的所有事件
+
+```js
+<ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<script>
+    document.querySelector('ul').addEventListener('click', function(event){
+        // IE兼容写法 event.srcElement
+        console.log(event.target.innerHTML)
+    })
+</script>
+```
+
+**优点**
+
+> 可以大量的节省内存，减少事件注册，只需绑定父元素事件就可以管理所有子元素的事件触发，并且对应新增的子元素不用重复的绑定事件
+
+**缺点**
+
+> 如果所有事件都是用代理触发，需要大量的逻辑判断，难免会出现误判情况
+
+**阻止事件冒泡**
+
+```js
+event.stopPropagation()
+
+# IE
+window.e.cancelBubble=true
+```
+
+**阻止默认行为**
+
+```js
+e.preventDefault()
+
+# IE
+window.e.returnValue=false;
+或
+return false
+```
 
 ## 继承
 
