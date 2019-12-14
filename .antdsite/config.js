@@ -164,7 +164,9 @@ module.exports = {
           collapsable: false,
           children: [
             'grade-tree',
-            'org-tree'
+            'org-tree',
+            'choose-user',
+            'choose-student'
           ]
         },
         'no-data'

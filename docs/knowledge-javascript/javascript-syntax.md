@@ -417,6 +417,189 @@ return false
 
 ## 继承
 
+**JavaScript中实现继承会用到js原型及prototype机制或call，apply，bind方法来实现**
+
+**<p class="tip-color">类式继承</p>**
+
+```js
+function Parent() {
+    this.name = 'hello world'
+}
+function Child() {
+    Parent.call(this)
+}
+```
+
+**<p class="tip-color">原型链继承</p>**
+
+```js
+function Parent() {
+    this.name = 'hello world'
+}
+function Child() {
+    this.props = 'son'
+}
+Child.prototype = new Parent()
+```
+
+**<p class="tip-color">ES6 CLASS继承</p>**
+
+```js
+class Parent {
+    constructor () {
+        this.name = 'hello world'
+    }
+    toString () {
+        return this.name
+    }
+}
+
+class Child extends Parent {
+    constructor () {
+        super()
+        this.props = 'son'
+    }
+    toString () {
+        return super.toString()
+    }
+}
+```
+
 ## 类和模块
 
-## 同步和异步
+**ES5中类的实现使用构造函数，ES6中使用class，将ES5中prototype的constructor属性直接作为其内部的构造函数**
+
+```js
+class Animation {
+    constructor (name, age) {
+        // 实例属性和方法
+        this.name = name
+        this.age = age
+        this.showName = function() {
+            return this.name
+        }
+    }
+    // 静态属性和方法
+    static type = '1'
+    static func () {
+        console.log('static func')
+    }
+    
+    // 原型方法
+    showAge () {
+        return this.age
+    }
+}
+const animation = new Animation('dog', 3)
+```
+
+**<p class="color-tip">CommonJS</p>**
+
+CommonJS模块化规范主要应用于服务器端程序，加载模块的方式属于同步加载，只有在加载完成之后才能执行后续操作，一个js文件就是一个commonjs模块，在服务器端的模块文件一般都保存在本地硬盘，所有加载速度较快。每一个模块都有自己的作用域，里面定义的变量，函数，类都是私有的，对其他文件不可见。nodejs，webpack就是以commonjs规范的形式来实现的
+
+**特点**
+
++ 所有代码都运行在模块作用域，不会污染全局作用域
+
++ 模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就会被缓存，以后在加载，就直接读取缓存结果，要想要模块再次运行，就必须清除缓存
+
++ 模块加载的顺序，按照其在代码出现的顺序执行
+
+**<p class="color-tip">CMD和AMD</p>**
+
+在浏览器环境中,对应模块的下载很大程度上取决于网络的传输速度，因此极有可能出现长时间等待现象，从而阻塞浏览器的渲染，所以就必须采取异步的模式(CMD和AMD), AMD模块规范采用异步加载方式，主要用于客户端浏览器环境下，但既可用于浏览器也可用于服务端，CMD则专注于浏览器端的模块化开发
+
+> AMD和CMD的区别：两者的区别在于对模块的加载和执行方式不同，AMD会在加载完模块的同时执行模块，从而拥有延迟低，效率高的特性，CMD则是加载完所有依赖模块后,在进入到程序，遇到需要执行的模块才会执行相应的操作
+
++ requireJS是基于AMD规范实现的
+
++ seaJS是基于CMD规范实现的
+
+
+## DOM
+
+**文档对象模型是用来表示和操作HTML和xml文档内容的基础API，document对象则是用来保存整个web页面的dom结构，在页面上所有的元素最终都会映射为一个dom对象**
+
+**<p>创建节点</p>**
+
++ document.createDocumentFragment() 创建内存文档碎片
+
++ document.createElement() 创建元素
+
++ document.createTextNode() 创建文档节点
+
+**<p>查找节点</p>**
+
++ getElementById 通过id获取dom元素
+
++ getElementsByTagName 通过标签名获取dom元素，返回nodeList类型
+
++ getElementsByClassName() 通过class查找，返回nodeList类型
+
++ querySelector() 通过class id 元素查找
+
++ querySelectorAll() 通过class id 元素查找对应的所有元素
+
+**<p>添加节点</p>**
+
+```js
+const ele = document.getElementById('div')
+const newEle = document.createElement('p')
+ele.appendChild(newEle)
+```
+
+**<p>删除节点</p>**
+
+需要先获取父元素，然后在删除子元素
+
+```
+parent.removeChild(child)
+```
+
+**<p>替换节点</p>**
+
+通过父元素操作
+
+```
+parent.removeChild(child1, child2)
+```
+
+**<p>插入节点</p>**
+
+```
+parent.removeChild(child1, child2) 在child2之前插入child1节点
+```
+
+**<p>复制节点</p>**
+
+```js
+var cEle = oldEle.cloneNode(true) //深度复制，复制节点下面的所有子节点
+var cEle = oldEle.clodeNode(false) // 只复制当前节点，不复制子节点 
+```
+
+**<p>移动节点</p>**
+
+```js
+var cloneELe = oldEle.cloneNode(true) // 被移动的节点
+document.removeChild(oldEle) // 删除原来的节点
+document.insertBefore(cloneEle, newEle) // 插入到目标节点之前
+```
+
+**<p>DOM属性</p>**
+
++ Node.childNodes: 访问一个单元素下的所有子元素
+
++ Node.firstNode: 与childNodes的第一个子元素是相同的效果
+
++ Node.lastNode: 与childNode的最后一个子元素是相同的效果
+
++ node.parentNode：访问自己的父节点
+
++ Node.nextSibling: 访问当前dom元素的下一个兄弟元素
+
++ Node.priviousSibling：访问当前dom元素上一个兄弟元素
+
+****
+## BOM
+
+**BOM为浏览器对象模型**
