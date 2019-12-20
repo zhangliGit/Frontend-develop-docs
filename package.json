@@ -11,6 +11,7 @@
   "devDependencies": {
     "antdsite": "0.12.10",
     "cz-conventional-changelog": "^3.0.2",
+    "express": "^4.17.1",
     "gatsby": "^2.13.45"
   },
   "dependencies": {

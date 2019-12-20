@@ -166,7 +166,8 @@ module.exports = {
             'grade-tree',
             'org-tree',
             'choose-user',
-            'choose-student'
+            'choose-student',
+            'route-navigator' 
           ]
         },
         'no-data'

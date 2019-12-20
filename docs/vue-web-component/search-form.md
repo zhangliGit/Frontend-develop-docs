@@ -10,7 +10,9 @@
 
 ## 示例
 
-```html
+[效果预览](http://192.168.1.28:3004/#/manage)
+
+```js {20-34}
 <template>
   <search-form @search-form="searchForm" :search-label="searchLabel">
     <div slot="left">
@@ -29,6 +31,21 @@
       type: 'input', // 表单类型
       label: '姓名', // 表单label值
       placeholder: '请输入姓名' // 表单默认值(非必选字段)
+    },
+    {
+      value: 'keyword', // 分类查询
+      type: 'selectInput', // 表单类型
+      selectType: [
+        {
+          key: 1,
+          val: '姓名'
+        },
+        {
+          key: 2,
+          val: '工号'
+        }
+      ],
+      placeholder: '请输入' // 表单默认值(非必选字段)
     },
     {
       list: [ // 选择列表项，select控件必传
@@ -91,3 +108,10 @@ is-rest|Boolean|否|false|是否显示重置按钮
 名字|参数|说明
 :-|:-|:-
 searchForm|Object|点击搜索按钮触发
+
+## 插槽
+
+名字|参数|说明
+:-|:-|:-
+left|String|左侧区域内容
+right|String|左侧区域内容
