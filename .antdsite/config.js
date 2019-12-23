@@ -147,6 +147,7 @@ module.exports = {
       ],
       '/vue-web-component/': [
         '',
+        'common-ui',
         {
           title: '表单组件',
           collapsable: false,
