@@ -16,6 +16,8 @@
 
 + [掘金](https://juejin.im)
 
++ [infoQ](https://www.infoq.cn)
+
 + [awesomes](https://www.awesomes.cn/)
 
 + [前端社区](http://www.alloyteam.com/nav/)
@@ -28,6 +30,8 @@
 + [codesandbox](https://codesandbox.io)
 
 + [codepen](https://codepen.io/)
+
++ [jsrun](http://jsrun.pro/square)
 
 ## 图标库
 
