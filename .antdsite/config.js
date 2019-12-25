@@ -148,6 +148,8 @@ module.exports = {
       '/vue-web-component/': [
         '',
         'common-ui',
+        'no-data',
+        'detail-show',
         {
           title: '表单组件',
           collapsable: false,
@@ -170,8 +172,7 @@ module.exports = {
             'choose-student',
             'route-navigator' 
           ]
-        },
-        'no-data'
+        }
       ],
       '/react-mobile-component/': [
         ''
