@@ -103,6 +103,9 @@ module.exports = {
           text: 'Node',
           link: '/knowledge-node/'
         }, {
+          text: 'Mongodb',
+          link: '/knowledge-mongodb/'
+        }, {
           text: 'Nginx',
           link: '/knowledge-nginx/'
         }, {
@@ -220,10 +223,12 @@ module.exports = {
         'es6',
         'es7',
         'es8',
-        'javascript-request.md',
-        'javascript-debug.md',
+        'es9',
+        'javascript-module',
+        'javascript-request',
+        'javascript-debug',
         'performance',
-        'javascript-brower.md',
+        'javascript-brower',
         'canvas'
       ],
       '/knowledge-vue/': [
@@ -239,6 +244,9 @@ module.exports = {
         ''
       ],
       '/knowledge-node/': [
+        ''
+      ],
+      '/knowledge-mongodb/': [
         ''
       ],
       '/knowledge-nginx/': [
