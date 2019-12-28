@@ -25,7 +25,23 @@ if(true) {
 console.log(a) // 会产生块级作用域
 ```
 
+**const声明常量，声明常量之后不容许再次重复声明**
+
+const声明对象后，可以新增属性值
+
 ## 变量的结构赋值
+
+**es6容许按照一定的模式，从数组和对象中提取值，对变量进行复制，这种模式被称之为结构赋值**
+
+<p class="mian-color">对象</p>
+
+```js
+var obj = {
+  name: 'zhangli'
+  age: 30
+}
+let {name, age} = obj
+```
 
 ## 字符串扩展
 
