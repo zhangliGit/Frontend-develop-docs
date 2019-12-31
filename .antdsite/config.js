@@ -200,6 +200,7 @@ module.exports = {
       ],
       '/knowledge-css/': [
         '',
+        'other',
         'layout',
         'shape',
         'animation'
