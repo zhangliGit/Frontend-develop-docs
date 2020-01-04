@@ -25,7 +25,8 @@ export default {
   mounted () {
   },
   methods: {
-    select () {
+    select (item) {
+      console.log(item) // { name: '', code: ''}
     }
   }
 }
@@ -39,4 +40,4 @@ export default {
 
 名字|类型|说明
 :-|:-|:-
-select||返回点击班级项信息
+select||返回点击项信息
