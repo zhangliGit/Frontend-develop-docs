@@ -25,7 +25,15 @@ export default {
   mounted () {
   },
   methods: {
-    select () {
+    select (item) {
+      console.log(item)
+      // {
+      //   classCode: '20191201',
+      //   gradeCode: '12',
+      //   isNewYear: 'false',
+      //   schoolYearId: '7'
+      //   title: '1班'
+      // }
     }
   }
 }
