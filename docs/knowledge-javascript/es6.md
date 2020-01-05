@@ -872,8 +872,6 @@ function nonenumerable(target, name, descriptor) {
 
 ## Module
 
-<p>严格模式 es6默认开启严格模式</p>
-
 ES6 的模块自动采用严格模式，不管你有没有在模块头部加上"use strict"，严格模式受到如下限制 
 
 + 变量必须声明后再次使用
@@ -920,7 +918,7 @@ ES6模块的运行机制与commonjs不一样，它遇到模块的加载命令imp
 <script type="module" src="foo.js"></script>
 ```
 
-浏览器对于带有type="module"的<script>，都是异步加载外部脚本，不会造成堵塞浏览器。
+浏览器对于带有type="module"的，都是异步加载外部脚本，不会造成堵塞浏览器。
 
 对于外部的模块脚本（上例是foo.js），有几点需要注意
 
