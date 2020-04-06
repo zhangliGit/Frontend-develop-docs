@@ -88,6 +88,9 @@ module.exports = {
           text: 'Javascript',
           link: '/knowledge-javascript/'
         }, {
+          text: 'Typescript',
+          link: '/knowledge-typescript/'
+        }, {
           text: 'Vue',
           link: '/knowledge-vue/'
         }, {
@@ -231,6 +234,9 @@ module.exports = {
         'performance',
         'javascript-brower',
         'canvas'
+      ],
+      '/knowledge-typescript/': [
+        ''
       ],
       '/knowledge-vue/': [
         ''

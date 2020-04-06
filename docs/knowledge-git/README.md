@@ -1,8 +1,8 @@
-# git基础操作
+# git 基础操作
 
-**git版本管理工具命令行操作手册**
+**git 版本管理工具命令行操作手册**
 
-**[git使用笔记](https://www.jianshu.com/p/3dc4677a3b08)**
+**[git 使用笔记](https://www.jianshu.com/p/3dc4677a3b08)**
 **[分支管理](https://www.cnblogs.com/cnblogsfans/p/5075073.html)**
 
 ## 初始化仓库
@@ -11,11 +11,12 @@
 git init
 ```
 
-## 查看git配置
+## 查看 git 配置
 
 ```
 git config --list
 ```
+
 ## 修改配置
 
 ```
@@ -39,9 +40,9 @@ rm test.js // 删除还有没add的文件
 
 // 如果文件在暂存区 不能直接删除，可以使用git reset HEAD file 取消暂存 或者使用 git rm -f file强制删除
 // 如果文件以被提交，则会被删除，在暂存区的状态为delete，可以使用git reset HEAD file 恢复， 然后使用git checkout -- file重新恢复文件
-git rm test.js 
+git rm test.js
 
-git rm -f file // 强制删除暂存的文件，也会删除工作区的
+git rm -r file // 强制删除暂存的文件，也会删除工作区的
 
 git rm --cached file // 删除暂存区的文件工作区不变
 ```
@@ -122,11 +123,11 @@ git commit --amend // 修改最后一次提价的描述
 
 ## 撤销提交的文件
 
-**git reset是回退的意思，不会产生新的版本提交, 实质是移动当前分支中HEAD的指针指向不同的commit版本**
+**git reset 是回退的意思，不会产生新的版本提交, 实质是移动当前分支中 HEAD 的指针指向不同的 commit 版本**
 
 **场景：当我们提交代码之后，发现代码有错误，想回退到之前某一次提交的版本，并且不需要保存错误的版本（也就是那个版本之后的版本），可以使用此命令**
 
-**使用此命令后 本地的库HEAD的指向比远程的要旧, 使用git push命令可能会报错, 需使用git push -f 强制推送**
+**使用此命令后 本地的库 HEAD 的指向比远程的要旧, 使用 git push 命令可能会报错, 需使用 git push -f 强制推送**
 
 ```
 git reset --hard  HEAD^ // 撤销到上一个版本
@@ -146,7 +147,7 @@ git reset --soft  HEAD^
 
 **适用场景： 如果我们想撤销之前的某一版本，但是又想保留该目标版本后面的版本，记录下这整个版本变动流程，就可以用这种方法**
 
-**git revert操作是一次新的版本提交，HEAD继续向前，本质和普通的git commit一样，仅仅commit内容很特殊**
+**git revert 操作是一次新的版本提交，HEAD 继续向前，本质和普通的 git commit 一样，仅仅 commit 内容很特殊**
 
 ```
 git revert HEAD // 恢复到上一个版本
@@ -157,7 +158,7 @@ git revert id // 恢复到id版本的前一个版本
 
 ```
 
-**revert过程中可能遇到冲突reverting**
+**revert 过程中可能遇到冲突 reverting**
 
 ```
 git revert --abort // 终止此次的回滚操作
@@ -187,15 +188,15 @@ git fetch origin -u [name]:[name]
 
 ```
 git branch -D [name]
-````
+```
 
-## 删除远程分支或tag
+## 删除远程分支或 tag
 
 ```
 git push origin --delete [name]
 ```
 
-## 删除本地tag
+## 删除本地 tag
 
 ```
 git tag -d [tag]
