@@ -5,8 +5,8 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
-  "component---node-modules-antdsite-src-templates-index-tsx": hot(preferDefault(require("E:\\projectManage\\Frontend-develop-docs\\node_modules\\antdsite\\src\\templates\\index.tsx"))),
-  "component---cache-dev-404-page-js": hot(preferDefault(require("E:\\projectManage\\Frontend-develop-docs\\.cache\\dev-404-page.js"))),
-  "component---src-pages-404-js": hot(preferDefault(require("E:\\projectManage\\Frontend-develop-docs\\src\\pages\\404.js")))
+  "component---node-modules-antdsite-src-templates-index-tsx": hot(preferDefault(require("D:\\canpoint-project\\Frontend-develop-docs\\node_modules\\antdsite\\src\\templates\\index.tsx"))),
+  "component---cache-dev-404-page-js": hot(preferDefault(require("D:\\canpoint-project\\Frontend-develop-docs\\.cache\\dev-404-page.js"))),
+  "component---src-pages-404-js": hot(preferDefault(require("D:\\canpoint-project\\Frontend-develop-docs\\src\\pages\\404.js")))
 }
 

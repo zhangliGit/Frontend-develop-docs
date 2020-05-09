@@ -1,11 +1,11 @@
 var plugins = [{
-      plugin: require('E:/projectManage/Frontend-develop-docs/node_modules/gatsby-mdx-fix/gatsby-ssr'),
-      options: {"plugins":[],"extensions":[".md",".mdx",".MD"],"gatsbyRemarkPlugins":["gatsby-remark-external-links",{"resolve":"E:\\projectManage\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-header-custom-ids\\index.js"},{"resolve":"E:\\projectManage\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-img-warpper-p\\index.js"},{"resolve":"E:\\projectManage\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\remark-default-class-name\\index.js"},{"resolve":"gatsby-remark-prismjs","options":{"inlineCodeMarker":">>>"}},{"resolve":"E:\\projectManage\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-ant-alert\\index.js","pluginOptions":{"info":[{"alias":"tip","defaultTitle":"Tip"},{"alias":"tip-zh","defaultTitle":"提示"}],"warning":[{"alias":"warning","defaultTitle":"Warning"},{"alias":"warning-zh","defaultTitle":"警告"}],"error":[{"alias":"error","defaultTitle":"Caveat"},{"alias":"error-zh","defaultTitle":"严重警告"}]}}]},
+      plugin: require('D:/canpoint-project/Frontend-develop-docs/node_modules/gatsby-mdx-fix/gatsby-ssr'),
+      options: {"plugins":[],"extensions":[".md",".mdx",".MD"],"gatsbyRemarkPlugins":["gatsby-remark-external-links",{"resolve":"D:\\canpoint-project\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-header-custom-ids\\index.js"},{"resolve":"D:\\canpoint-project\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-img-warpper-p\\index.js"},{"resolve":"D:\\canpoint-project\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\remark-default-class-name\\index.js"},{"resolve":"gatsby-remark-prismjs","options":{"inlineCodeMarker":">>>"}},{"resolve":"D:\\canpoint-project\\Frontend-develop-docs\\node_modules\\antdsite\\lib\\plugins\\gatsby-remark-ant-alert\\index.js","pluginOptions":{"info":[{"alias":"tip","defaultTitle":"Tip"},{"alias":"tip-zh","defaultTitle":"提示"}],"warning":[{"alias":"warning","defaultTitle":"Warning"},{"alias":"warning-zh","defaultTitle":"警告"}],"error":[{"alias":"error","defaultTitle":"Caveat"},{"alias":"error-zh","defaultTitle":"严重警告"}]}}]},
     },{
-      plugin: require('E:/projectManage/Frontend-develop-docs/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('D:/canpoint-project/Frontend-develop-docs/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('E:/projectManage/Frontend-develop-docs/node_modules/antdsite/gatsby-ssr'),
+      plugin: require('D:/canpoint-project/Frontend-develop-docs/node_modules/antdsite/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

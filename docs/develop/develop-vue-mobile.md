@@ -2,58 +2,47 @@
 
 ## 脚手架
 
-**脚手架模板基于vue/cli3.0构建，其在编译和打包性能方面有了很大的提升，webpack配置方面也更加的友好，根据项目实际情况在此模块上进行了优化和扩展，形成了一套完善的开发模板，开箱即用**
+**脚手架模板基于 vue/cli3.0 构建，其在编译和打包性能方面有了很大的提升，webpack 配置方面也更加的友好，根据项目实际情况在此模块上进行了优化和扩展，形成了一套完善的开发模板，开箱即用**
 
 ## 模板特性
 
-+ Vue
+- Vue
 
-+ Vue-router
+- Vue-router
 
-+ Vuex
+- Vuex
 
-+ Axios
+- Axios
 
-+ Es系列
+- Es 系列
 
-+ Less
+- Less
 
-+ [Vant UI](https://youzan.github.io/vant/#/) <i class="fa fa-link"></i>
+- [Vant UI](https://youzan.github.io/vant/#/) <i class="fa fa-link"></i>
 
-+ 布局适配
+- 布局适配
 
-+ Rem适配
+- Rem 适配
 
-+ [图标库IconFont](https://www.iconfont.cn/) <i class="fa fa-link"></i>
+- [图标库 IconFont](https://www.iconfont.cn/) <i class="fa fa-link"></i>
 
-+ [Webpack4.0](https://www.webpackjs.com/) <i class="fa fa-link"></i>
+- [Webpack4.0](https://www.webpackjs.com/) <i class="fa fa-link"></i>
 
-+ [Babel](https://www.babeljs.cn/) <i class="fa fa-link"></i>
+- [Babel](https://www.babeljs.cn/) <i class="fa fa-link"></i>
 
-+ 单/多模块(页面)打包
+- 单/多模块(页面)打包
 
-+ 多环境运行打包
+- 多环境运行打包
 
-+ 代码分割打包
+- 代码分割打包
 
-+ 组件按需加载
+- 组件按需加载
 
-+ 全局样式变量（Less）
+- 全局样式变量（Less）
 
-+ CDN配置
+- CDN 配置
 
-+ ESLint + Prettier
-
-
-## 初始化项目
-
-```
-> can-cli init vue-mobile
-
-> cd vue-mobile
-
-> npm i
-```
+- ESLint + Prettier
 
 ## 运行项目
 
@@ -77,7 +66,7 @@ npm run dev-prod
 
 ## 布局适配
 
-**移动端布局使用弹性盒子模型Flex，为了统一书写规范和简洁，单独制定了一个样式文件qui-base**
+**移动端布局使用弹性盒子模型 Flex，为了统一书写规范和简洁，单独制定了一个样式文件 qui-base**
 
 ```
 |--- src
@@ -90,22 +79,23 @@ npm run dev-prod
   移动界面布局请严格使用qui-fx-xx样式，特殊情况除外...
 </p>
 
-## Rem适配
+## Rem 适配
 
-**开发时UI效果图以 750x1334分辨率 为标准，界面字体使用js动态设置（默认750 x 1334设为20px），css单位值使用postcss-plugin-px2rem插件动态转换px为rem值，开发时只要测量效果图实际px值即可(相关配置已在项目模板中完成，开发时不必理会)**
+**开发时 UI 效果图以 750x1334 分辨率 为标准，界面字体使用 js 动态设置（默认 750 x 1334 设为 20px），css 单位值使用 postcss-plugin-px2rem 插件动态转换 px 为 rem 值，开发时只要测量效果图实际 px 值即可(相关配置已在项目模板中完成，开发时不必理会)**
 
-**动态设置HTML字体大小**
+**动态设置 HTML 字体大小**
 
 ```js
-;(function () {
-  var screenW = document.documentElement.clientWidth || document.body.clientWidth
-  var hDom = document.getElementsByTagName('html')[0]
-  if (screenW > 496) screenW = 496
-  hDom.style.fontSize = screenW / 18.75 + 'px'
-}())
+(function() {
+  var screenW =
+    document.documentElement.clientWidth || document.body.clientWidth;
+  var hDom = document.getElementsByTagName("html")[0];
+  if (screenW > 496) screenW = 496;
+  hDom.style.fontSize = screenW / 18.75 + "px";
+})();
 ```
 
-**实际书写, 例如UI中有个区域的大小为 120*120px**
+**实际书写, 例如 UI 中有个区域的大小为 120\*120px**
 
 ```
 .box {
@@ -114,7 +104,7 @@ npm run dev-prod
 }
 ```
 
-**转化后（375*667尺寸）**
+**转化后（375\*667 尺寸）**
 
 ```
 .box {
@@ -138,28 +128,28 @@ npm run dev-prod
 **代码**
 
 ```js
-const ConfigEnv = process.env.VUE_APP_URL
-let hostEnv = ''
+const ConfigEnv = process.env.VUE_APP_URL;
+let hostEnv = "";
 
-if (ConfigEnv === 'test') {
+if (ConfigEnv === "test") {
   // 测试环境地址
-  hostEnv = 'http://test'
-} else if (ConfigEnv === 'prod') {
+  hostEnv = "http://test";
+} else if (ConfigEnv === "prod") {
   // 正式环境地址
-  hostEnv = 'http://prod'
+  hostEnv = "http://prod";
 } else {
   // 开发环境地址
-  hostEnv = 'http://dev'
+  hostEnv = "http://dev";
 }
 
-export default hostEnv
+export default hostEnv;
 ```
 
 ## 接口配置
 
-**前端调用的接口根据功能进行模块划分，统一放在api目录**
+**前端调用的接口根据功能进行模块划分，统一放在 api 目录**
 
-**api接口目录**
+**api 接口目录**
 
 ```
 |--- src
@@ -169,20 +159,20 @@ export default hostEnv
          |-- news.js 新闻模块接口
 ```
 
-****
+---
 
 **接口模块示例**
 
 ```js
-import hostEnv from './host-env'
+import hostEnv from "./host-env";
 
 const homeApi = {
-  getIndex: '/mobile/getList#post#false', // 获取数据列表
-}
+  getIndex: "/mobile/getList#post#false", // 获取数据列表
+};
 for (const val in homeApi) {
-  homeApi[val] = `${hostEnv}${homeApi[val]}`
+  homeApi[val] = `${hostEnv}${homeApi[val]}`;
 }
-export default homeApi
+export default homeApi;
 ```
 
 ## 项目打包

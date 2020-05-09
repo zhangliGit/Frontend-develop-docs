@@ -18,7 +18,7 @@
 
 ## 示例
 
-```html
+```html {9-11,69-75}
 <template>
   <table-list
     is-check
@@ -27,9 +27,33 @@
     v-model="chooseList"
     :columns="columns"
     :table-list="userList">
+    <template v-slot:other1="other1">
+     {{ other1.record }}
+    </template>
     <template v-slot:actions="action">
-      <a-tag color="#ccc" @click.stop="goDetial('/manage/detail')">详情</a-tag>
-      <a-tag @click.stop="goDetial('/manage/addForm')">编辑</a-tag>
+      <a-tooltip placement="topLeft" title="详情">
+        <a-button size="small" class="detail-action-btn" icon="ellipsis" @click="goDetail(action.record)"></a-button>
+      </a-tooltip>
+      <a-tooltip placement="topLeft" title="权限管理">
+        <a-button size="small" class="power-action-btn" icon="lock"></a-button>
+      </a-tooltip>
+      <a-tooltip placement="topLeft" title="用户列表">
+        <a-button size="small" class="user-action-btn" icon="team"></a-button>
+      </a-tooltip>
+      <a-tooltip placement="topLeft" title="新增">
+        <a-button size="small" class="add-action-btn" icon="plus"></a-button>
+      </a-tooltip>
+      <a-tooltip placement="topLeft" title="编辑">
+        <a-button size="small" class="edit-action-btn" icon="form"></a-button>
+      </a-tooltip>
+      <a-popconfirm placement="left" okText="确定" cancelText="取消" @confirm="del">
+        <template slot="title">
+          您确定删除吗?
+        </template>
+        <a-tooltip placement="topLeft" title="删除">
+          <a-button size="small" class="del-action-btn" icon="delete"></a-button>
+        </a-tooltip>
+      </a-popconfirm>
     </template>
   </table-list>
 </template>
@@ -62,6 +86,13 @@
       title: '手机',
       dataIndex: 'phone',
       width: '10%'
+    },
+    {
+      title: '身份类型',
+      width: '10%',
+      scopedSlots: {
+        customRender: 'other1'
+      }
     },
     {
       title: '底照',
@@ -106,6 +137,21 @@
   }
 </script>
 ```
+
+## 说明
+
+<p class="tip-color">表格数据唯一性：</p>
+
++ 为了保证每条数据的唯一性，返回的列表数据中必须有一个id字段，如果没有，先处理数据
++ 表格如需回选，设置chooseList为回选项的数组列表，每项值为表格数据唯一id值
+
+<p class="tip-color">表格中如有非文本内容，可以使用插槽实现，组件中提供了照片和其他自定义类型的插槽：</p>
+
++ 底照 photoPic
++ 抓怕照 snapPic
++ 其他类型的为 other1 other2 other3 other4 other5
+
+<p class="warn-color">使用方法参照示例</p>
 
 ## 属性
 

@@ -1,4 +1,4 @@
-# vue web端开发
+# vue web 端开发
 
 ## 脚手架
 
@@ -6,45 +6,35 @@
 
 ## 模板特性
 
-+ Vue
+- Vue
 
-+ Vue-router
+- Vue-router
 
-+ Vuex
+- Vuex
 
-+ Axios
+- Axios
 
-+ Es系列
+- Es 系列
 
-+ Less
+- Less
 
-+ [ant-design-vue](https://vue.ant.design/docs/vue/introduce-cn/) <i class="fa fa-link"></i>
+- [ant-design-vue](https://vue.ant.design/docs/vue/introduce-cn/) <i class="fa fa-link"></i>
 
-+ [Webpack4.0](https://www.webpackjs.com/) <i class="fa fa-link"></i>
+- [Webpack4.0](https://www.webpackjs.com/) <i class="fa fa-link"></i>
 
-+ [Babel](https://www.babeljs.cn/) <i class="fa fa-link"></i>
+- [Babel](https://www.babeljs.cn/) <i class="fa fa-link"></i>
 
-+ 多环境运行打包
+- 多环境运行打包
 
-+ 代码分割打包
+- 代码分割打包
 
-+ 组件按需加载
+- 组件按需加载
 
-+ 全局样式变量（Less）
+- 全局样式变量（Less）
 
-+ CDN配置
+- CDN 配置
 
-+ ESLint + Prettier
-
-## 初始化项目
-
-```
-> can-cli init vue-admin
-
-> cd vue-admin
-
-> npm i
-```
+- ESLint + Prettier
 
 ## 运行项目
 
@@ -70,50 +60,44 @@ npm run dev-prod
 
 **开发中预设了三种环境，通过不同命令启动，避免频繁手动切换，基本能满足实际开发需求**
 
-**脚本目录**
-
-```
-|--- src
-     |-- config
-         |-- index.js
-```
+**项目 config 目录 host-env 文件**
 
 **代码**
 
 ```js
-const ConfigEnv = process.env.VUE_APP_URL
-let hostEnv = ''
+const ConfigEnv = process.env.VUE_APP_URL;
+let hostEnv = "";
 
-if (ConfigEnv === 'test') {
+if (ConfigEnv === "test") {
   // 测试环境地址
-  hostEnv = 'http://test'
-} else if (ConfigEnv === 'prod') {
+  hostEnv = "http://test";
+} else if (ConfigEnv === "prod") {
   // 正式环境地址
-  hostEnv = 'http://prod'
+  hostEnv = "http://prod";
 } else {
   // 开发环境地址
-  hostEnv = 'http://dev'
+  hostEnv = "http://dev";
 }
 
-export default hostEnv
+export default hostEnv;
 ```
 
-## 项目打包
+## 项目打包发布
 
 **测试环境**
 
 ```
-npm run build-test
+npm run build-test 系统名称
 ```
 
 **开发环境**
 
 ```
-npm run build
+npm run build 系统名称
 ```
 
 **正式环境**
 
 ```
-npm run build-prod
+npm run build-prod 系统名称
 ```
