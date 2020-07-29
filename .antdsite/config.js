@@ -80,10 +80,10 @@ module.exports = {
         text: "前端项目",
         link: "/project/",
       },
-      {
-        text: "技术分享",
-        link: "/sharing/",
-      },
+      // {
+      //   text: "技术分享",
+      //   link: "/sharing/",
+      // },
       // {
       //   text: '知识库',
       //   important: true,
@@ -149,7 +149,7 @@ module.exports = {
       ],
       "/code/": ["", "code-vue", "code-react", "code-tip", "code-git"],
       "/design/": ["", "design-mobile", "design-web"],
-      "/uniapp-component/": ["", "tab-list"],
+      "/uniapp-component/": ["", "cp-select-item", "tab-menu"],
       "/vue-mobile-component/": [""],
       "/vue-web-component/": [
         "",

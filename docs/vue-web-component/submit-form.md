@@ -44,7 +44,7 @@
     {
       value: "userName",
       initValue: "",
-      type: "input",
+      type: "input", // numberInput: 纯数字文本框
       label: "姓名",
       required: false, // 默认为true，不用填写
       readonly: true, // 是否只读,
@@ -52,7 +52,7 @@
       len: 3, // 固定长度
       max: 4, // 最大长度
       placeholder: "请输入姓名",
-      regular: "password" // 正则验证{密码：password，网址：url，IP：ip，手机号：phone，邮箱：email}
+      regular: "password", // 正则验证{密码：password，网址：url，IP：ip，手机号：phone，邮箱：email，身份证：card}
     },
     {
       value: "sex",
@@ -60,20 +60,20 @@
       list: [
         {
           key: 1,
-          val: "男"
+          val: "男",
         },
         {
           key: 2,
-          val: "女"
+          val: "女",
         },
         {
           key: 3,
-          val: "未知"
-        }
+          val: "未知",
+        },
       ],
       type: "select",
       label: "性别",
-      placeholder: "请选择性别"
+      placeholder: "请选择性别",
     },
     {
       value: "enjoy",
@@ -81,20 +81,20 @@
       list: [
         {
           key: 1,
-          val: "篮球"
+          val: "篮球",
         },
         {
           key: 2,
-          val: "足球"
+          val: "足球",
         },
         {
           key: 3,
-          val: "羽毛球"
-        }
+          val: "羽毛球",
+        },
       ],
       type: "checkbox",
       label: "兴趣爱好",
-      placeholder: "请选择兴趣爱好"
+      placeholder: "请选择兴趣爱好",
     },
     {
       value: "marry",
@@ -102,41 +102,41 @@
       list: [
         {
           key: 1,
-          val: "已婚"
+          val: "已婚",
         },
         {
           key: 2,
-          val: "未婚"
-        }
+          val: "未婚",
+        },
       ],
       type: "radio",
       label: "是否已婚",
-      placeholder: "请选择是否已婚"
+      placeholder: "请选择是否已婚",
     },
     {
       type: "upload",
-      label: "上传图像"
+      label: "上传图像",
     },
     {
       value: "birthday",
       type: "singleTime",
       label: "生日",
       initValue: "",
-      placeholder: "请选择生日"
+      placeholder: "请选择生日",
     },
     {
       value: "workTime",
       type: "rangeTime",
       label: "工作时间",
       initValue: "",
-      placeholder: "请选择工作时间"
-    }
+      placeholder: "请选择工作时间",
+    },
   ];
   export default {
     name: "Demo",
     components: {
       SubmitForm,
-      UploadMulti
+      UploadMulti,
     },
     data() {
       return {
@@ -144,12 +144,12 @@
           url: "/upload/base/file/freeUpload", // 接口地址
           tip: "上传图片",
           h: 120, // 高度
-          w: 120 // 宽度
+          w: 120, // 宽度
         },
         fileList: [],
         title: "新增应用",
         formStatus: false,
-        formData
+        formData,
       };
     },
     methods: {
@@ -171,8 +171,8 @@
           // 添加
           this.formData = formData;
         }
-      }
-    }
+      },
+    },
   };
 </script>
 ```

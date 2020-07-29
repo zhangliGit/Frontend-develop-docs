@@ -48,6 +48,8 @@ npm run build-test protal-school
 
 **正式环境打包发布**
 
+**不要随便发布，按固定日期上线版本**
+
 ```js
 npm run build-prod protal-school
 ```
