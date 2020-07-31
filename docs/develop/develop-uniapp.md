@@ -1,10 +1,29 @@
-# uniapp 开发
+# uniapp 开发流程和规范
 
 **<p class="main-color">移动端为了支持 H5 和小程序，使用跨端框架 uniApp 开发</p>**
 
 [官网文档](https://uniapp.dcloud.io/)
 
-# 开发样式规范
+<p class="tip-warn">
+移动端请严格参考下列所述的开发流程和规范进行开发
+</p>
+
+# 开发流程
+
+1. 每个新模块在 pages 下建立一个目录文件，然后在 index 目录中加入配置
+
+2. 新模块包括家长端和教职工端的，在目录下分别建立两个角色的文件夹，对于不同角色模块共用的部分一定要封装成组件（特殊情况除外）
+
+3. 启动程序服务后，访问如下地址进行开发调试
+
+```js
+http://localhost:8080/mobile-protal/protal/#/pages/protal/index/?openid=ojPaT0UdchXoYtnaysWQNVHzAnS4
+```
+
+<p>访问后，后续模块中所需要的基础信息都已经缓存，开发时直接在store获取即可（避免在开发中直接对参数写死传参, 特殊情况除外，后续一定要更改）</p>
+<p>进入到首页后，点击左下角“模块”按钮，回到模块列表页，再点击对应的新增模块进行预览，开发和调试</p>
+
+# 开发规范
 
 [参考 uView 组件库](http://uviewui.com/)
 
@@ -41,11 +60,35 @@
 <view class="rit-icon"></view>
 ```
 
+## 图片的使用
+
+**界面中需要用的图片和图标，直接使用服务上的图片，尽量不要放在本地使用**
+
+**使用方法如下**
+
+**1. 把切图通过如下地址上传到服务器**
+
+```
+http://canpointtest.com/pc-protal/project-publish
+```
+
+**2. 在界面中使用**
+
+```js
+// 图片
+<image class="app-icon" src="/mobile-img/app-auto-icon.png" alt="">
+// 背景图片
+.bg-img {
+  background: url(/mobile-img/app-auto-icon.png) no-repeat;
+  background-size: 40rpx 40rpx;
+}
+```
+
 ## 界面基本结构
 
 ```js
 <template>
-  <view class="page-name">
+  <view class="page-name"> // page-name 请定义为跟界面含义相关的名称
     <view class="header"></view>
     <scroll-view scroll-y="true" class="scroll-h"></scroll-view>
     <view class="footer"></view>
