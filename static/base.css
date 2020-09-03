@@ -1,28 +1,28 @@
 /** 主题颜色 **/
 .main-color {
-  color: #1890ff
+  color: #1890ff;
 }
 .tip-color {
-  color: #1890ff
+  color: #1890ff;
 }
 .warn-color {
-  color:#e7c000
+  color: #e7c000;
 }
 .error-color {
-  color: #c00
+  color: #c00;
 }
 /** 提示信息 **/
 .tip-info {
   border-left: 4px #1890ff solid;
   padding: 4px 15px;
-  color:#1890ff;
+  color: #1890ff;
   background-color: #eee;
 }
 .tip-warn {
   border-left: 4px #e7c000 solid;
   padding: 4px 15px;
-  color:#6b5900;
-  background-color: rgba(255, 229, 100, .3);
+  color: #6b5900;
+  background-color: rgba(255, 229, 100, 0.3);
 }
 .tip-danger {
   border-left: 4px #c00 solid;
@@ -33,7 +33,7 @@
 
 /** ul li字体颜色 **/
 li.__internal p {
-  color: #1890ff
+  color: #1890ff;
 }
 
 /** 表格 **/

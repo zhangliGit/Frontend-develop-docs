@@ -139,14 +139,7 @@ module.exports = {
     ],
     sidebar: {
       "/guide/": ["introduction"],
-      "/develop/": [
-        "",
-        "develop-uniapp",
-        "develop-vue-mobile",
-        "develop-vue-web",
-        "develop-react-mobile",
-        "develop-react-web",
-      ],
+      "/develop/": ["", "develop-uniapp", "develop-vue-web"],
       "/code/": ["", "code-vue", "code-react", "code-tip", "code-git"],
       "/design/": ["", "design-mobile", "design-web"],
       "/uniapp-component/": ["", "cp-select-item", "tab-menu"],
