@@ -2,33 +2,34 @@
 
 ## gitlab（项目代码版本库）
 
-[戳我](http://192.168.2.234:9000/) <i class="fa fa-link"></i> **(需要自己注册账号)**
+[戳我](http://192.168.2.235/) <i class="fa fa-link"></i> **(需要自己注册账号)**
 
 **项目预览**
 
-- 平安校园云平台 PC 端：new-protal-base （vue）
+- 平安校园云平台：safe-campus-protal （vue）
 
-- 平安校园云平台微信端：safe-school-mobile （vue）
+- 平安校园微信公众号：safe-campus-weChat （vue）
 
-- 电子班牌 App 客户端： class-card-app （react）
+- 平安校园微信小程序：safe-campus-applet (uni-app)
 
-- 云平台大屏数据展示端：data-screen-view （vue）
+- 电子班牌 App 客户端： class-card-client （react）
 
-- 独立 pc 端项目：canpoint-project-common （vue）
+- 云平台大屏数据展示端：safe-campus-dataView （vue）
 
-- 独立移动端项目：safe-mobile （vue）
+- 平安校园公共平台：canpoint-manage-system （vue）
+
+- 移动端项目：safe-campus-mobile （vue）
 
 所有项目都拉取远程 dev 分支，不要在 master 分支进行开发和提交，拉取代码安装依赖，运行即可
 
 ```
-git clone  http://192.168.2.234:9000/zhangli/new-protal-base.git // 云平台地址
+git clone  http://192.168.2.235/canpoint-front-end/safe-campus-protal.git // 云平台地址
 git fetch origin -u dev:dev
 
 cnpm i or  yarn add
 
 npm run dev
 
-npm run start (电子班牌App客户端)
 ```
 
 ## 禅道

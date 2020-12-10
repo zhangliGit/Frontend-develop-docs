@@ -10,7 +10,7 @@
 
 http://192.168.1.185:8080/mobile-protal/protal/#/pages/protal/index/?openid=ojPaT0UdchXoYtnaysWQNVHzAnS4
 
-![正式](/img/wx_ewm_test.jpg)
+![正式](/img/wx_ewm_test.jpg =100x100)
 
 **正式地址以及公众号**
 

@@ -6,6 +6,8 @@
 
 ## 示例
 
+<iframe src="http://baidu.com" width="100%" height="500px"></iframe>
+
 ```html
 <template>
   <view>

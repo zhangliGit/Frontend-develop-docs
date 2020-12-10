@@ -175,7 +175,7 @@ module.exports = {
       ],
       "/react-mobile-component/": [""],
       "/react-web-component/": [""],
-      "/project/": ["", "project-mobile", "project-web", "project-publish"],
+      "/project/": [""],
       "/sharing/": [""],
       "/knowledge-link/": [""],
       "/knowledge-html/": [""],
